@@ -2,5 +2,40 @@
 # These configs will be merged with the warp routes in the configured registry
 # The input here is typically the output of the Hyperlane CLI warp deploy command
 ---
-tokens: []
+
+
+
+# yaml-language-server: $schema=../schema.json
+tokens:
+  - addressOrDenom: "0x000cEaE583Fa9Eb5B09cB968E45f0A0581752c64"
+    chainName: arbitrumsepolia
+    collateralAddressOrDenom: "0xc480aFeB019a9CBBE2FC716fD582830aB084BC5D"
+    connections:
+      - token: ethereum|citreatestnet|0xe08Dae985c387D5f41C7115d83E573232C248A88
+      - token: ethereum|sepolia|0x9A3682BfBF72B904aaBAFe13188D050301423F3d
+    decimals: 6
+    name: MockUSDC
+    standard: EvmHypCollateral
+    symbol: mUSDC
+  - addressOrDenom: "0xe08Dae985c387D5f41C7115d83E573232C248A88"
+    chainName: citreatestnet
+    connections:
+      - token: ethereum|arbitrumsepolia|0x000cEaE583Fa9Eb5B09cB968E45f0A0581752c64
+      - token: ethereum|sepolia|0x9A3682BfBF72B904aaBAFe13188D050301423F3d
+    decimals: 6
+    name: MockUSDC
+    standard: EvmHypSynthetic
+    symbol: mUSDC
+  - addressOrDenom: "0x9A3682BfBF72B904aaBAFe13188D050301423F3d"
+    chainName: sepolia
+    collateralAddressOrDenom: "0xCA00F351566B75B3d2fa2390d466f652341265d1"
+    connections:
+      - token: ethereum|arbitrumsepolia|0x000cEaE583Fa9Eb5B09cB968E45f0A0581752c64
+      - token: ethereum|citreatestnet|0xe08Dae985c387D5f41C7115d83E573232C248A88
+    decimals: 6
+    name: MockUSDC
+    standard: EvmHypCollateral
+    symbol: mUSDC
+
+
 options: {}
